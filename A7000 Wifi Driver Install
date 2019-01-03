@@ -1,0 +1,13 @@
+Installing A7000 Wifi Drivers
+
+If installing fresh:
+sudo apt-get install git dkms
+git clone https://github.com/zebulon2/rtl8814au.git
+sudo dkms add ./rtl8814au 
+sudo dkms build -m rtl8814au
+sudo dkms install -m rtl8814au -v 4.3.21
+
+If need to reinstall:
+sudo dkms remove rtl8814au/4.3.21 --all
+sudo dkms build -m rtl8814au -v 4.3.21
+sudo dkms install -m rtl8814au -v 4.3.21
